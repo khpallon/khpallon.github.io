@@ -1,0 +1,125 @@
+body{
+    font-family: 'Lavinia', sans-serif;
+    background-color: rgb(41, 39, 39);
+    margin: 0;
+    
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(41, 39, 39); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(54, 49, 49); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+#myform{
+   text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    float: middle;
+}
+
+#start{
+    background-color:#555 ;
+}
+
+#error{
+    text-align: center;
+    color: red;
+    display: none;
+}
+
+#title{
+    text-align: center;
+
+}
+
+.inputBox{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+#btnLogIn{
+    background-color: rgb(54, 49, 49);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#btnLogIn:hover, #btnRefresh:hover{
+    background-color: rgb(85, 81, 81);
+}
+
+#btnRefresh{
+    background-color: rgb(54, 49, 49);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    border-radius: 10px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+    margin-right: 10px;
+  }
+
+#chart{
+    background-color: rgb(54, 49, 49);
+    border-radius: 10px;
+    padding-top: 25px;
+    display: none;
+    vertical-align:middle;
+    flex-direction: column; /* Align items vertically */
+    width: 1890px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+#lineGraph{
+    background-color: rgb(54, 49, 49);
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 20px;
+    vertical-align:middle;
+    flex-direction: column; /* Align items vertically */
+    width: 1890px;    
+    overflow: hidden;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
+#profile{
+    margin-left: 10px;
+}
+
+
+
+@font-face {
+    font-family: 'Lavinia';
+    src: url(Lavinia.ttf);
+}
