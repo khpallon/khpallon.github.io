@@ -1,125 +1,65 @@
 body{
-    font-family: 'Lavinia', sans-serif;
-    background-color: rgb(41, 39, 39);
-    margin: 0;
-    
+    font-family: Neuropol;
+    background-color: aliceblue;
 }
-
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: rgb(41, 39, 39); 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(54, 49, 49); 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-
-#myform{
-   text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    float: middle;
-}
-
-#start{
-    background-color:#555 ;
-}
-
-#error{
-    text-align: center;
-    color: red;
-    display: none;
-}
-
-#title{
-    text-align: center;
-
-}
-
-.inputBox{
-    margin: 10px;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-}
-
-#btnLogIn{
-    background-color: rgb(54, 49, 49);
-    border: none;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
+.letter{
+    font-size: larger;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius:5px;
+    background-color: #01F9C6;
     display: inline-block;
-    border-radius: 10px;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 2px 2px;
 }
-
-#btnLogIn:hover, #btnRefresh:hover{
-    background-color: rgb(85, 81, 81);
+#letterContainer{
+    display: inline-block;
 }
-
-#btnRefresh{
-    background-color: rgb(54, 49, 49);
-    border: none;
-    color: black;
-    padding: 15px 32px;
+#whole{
+    background-image: linear-gradient(to right, #01F9C6 , rgb(236, 238, 238));    border-radius: 16px;
+    box-shadow: 10px 10px 5px rgb(158, 154, 154);
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
     text-align: center;
-    text-decoration: none;
-    display: none;
-    border-radius: 10px;
-    font-size: 16px;
-    margin: 4px 2px;
+
+}
+#radial{
+    background-image: linear-gradient(to right, #01F9C6 , rgb(236, 238, 238));    border-radius: 16px;
+    box-shadow: 10px 10px 5px rgb(158, 154, 154);
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+
+}
+#restart{
+    display:block;
+    font-family: Neuropol;
+    font-size: larger;
+    border-radius:5px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px;
+    background-color: #01F9C6;
+
+}
+
+#restart:hover{
+    background-color: #18a78a;
     cursor: pointer;
-    float: right;
-    margin-right: 10px;
-  }
-
-#chart{
-    background-color: rgb(54, 49, 49);
-    border-radius: 10px;
-    padding-top: 25px;
-    display: none;
-    vertical-align:middle;
-    flex-direction: column; /* Align items vertically */
-    width: 1890px;
-    overflow: hidden;
-    margin-left: 10px;
 }
-#lineGraph{
-    background-color: rgb(54, 49, 49);
-    border-radius: 10px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin-top: 20px;
-    vertical-align:middle;
-    flex-direction: column; /* Align items vertically */
-    width: 1890px;    
-    overflow: hidden;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    display: none;
-}
-#profile{
-    margin-left: 10px;
-}
-
-
 
 @font-face {
-    font-family: 'Lavinia';
-    src: url(Lavinia.ttf);
+    font-family: 'Neuropol'; /*a name to be used later*/
+    src: url('./neuropol\ x\ rg.otf'); /*URL to font*/
 }
+  
+  .slider {
+    width: 25%;
+  }
+  
