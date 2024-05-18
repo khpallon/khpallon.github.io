@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function randomizeLetters(charCombo){
 
     for (let ind = 0; ind < letters; ind++){
-        let key = charCombo[Math.floor(Math.random() * 10)]
+        let key = charCombo[Math.floor(Math.random() * charCombo.length)]
         keyCombo.push(key); 
         let character = htmlToElement(`<p id="${ind}" class="letter">${key.toUpperCase()}</p>`)
         document.getElementById("letterContainer").appendChild(character)
