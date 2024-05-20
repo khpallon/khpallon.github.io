@@ -106,3 +106,33 @@ function htmlToElement(html) {
     template.innerHTML = html;
     return template.content.firstChild;
 }
+
+function stopLetterGame(){
+    document.getElementById("letterContainer").innerHTML = "";
+    window.removeEventListener('keyup', pressed)
+    this.document.getElementById("whole").style.filter = "brightness(100%)"
+    document.getElementById("timer").innerText = ""
+    up = 0;
+    keyCombo = [];
+    document.getElementById('slider').value = "5";
+    document.getElementById('letterSlider').value = "10";
+    document.getElementById('radialValue').innerText = "Time: 5";
+    document.getElementById('letterValue').innerText = "Letters: 10"
+    
+    clearInterval(gameTimer)
+    clearTimeout(timeout)
+
+}
+
+function hide(){
+    stopLetterGame()
+    document.getElementById('mainmenu').style.display = "none"
+    document.getElementById('letterMinigame').style.display = "block"
+}
+
+function backToMainMenu(){
+    stopLetterGame()
+    document.getElementById('letterMinigame').style.display = "none"
+    document.getElementById('mainmenu').style.display = "block"
+
+}

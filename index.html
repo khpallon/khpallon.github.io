@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="main.js"></script> 
+    <script src="finder.js"></script> 
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/x-icon" href="/Letter.png">
     <title>LETTER-MINIGAME</title>
 </head>
 <body>
+    <section id="mainmenu">
+        <div id="whole" class="whole">
+        <p>MINIGAMES</p>
+        <button id="letter-minigame" onclick="hide()">LETTER-MINIGAME</button>
+        <button id="finder-minigame" onclick="finderhider()">FINDER-MINIGAME</button>
+        </div>
+    </section>
+    <section id="letterMinigame">
     <div id="whole" class="whole">
     <p>LETTER-MINIGAME</p>
     <div id="letterContainer"></div>
@@ -28,6 +37,31 @@
             <option value="all">All letters</option>
         </select>
     </form>
+    <button id="switch" onclick="backToMainMenu()">MAIN MENU</button>
 </div>
+</section>
+<section id="finderMinigame">
+    <div id="whole-Finder" class="whole">
+    <p>FINDER-MINIGAME</p>
+    <div id="findthis"></div>
+    <div id="finder-timer"></div>
+    <div id="minigame"></div>
+    <p id="timer"></p>   
+</div>
+<div id="radial">
+    <button class="restart-finder" onclick="reset()">START/RESTART</button>
+    <form id="myForm">
+        <p id="finder-radialValue">Time: 5</p>
+        <input autocomplete="off" type="range" min="5" max="30" value="5" id="finder-slider" class="slider"><br>
+        <input type="checkbox" id="alphabet" value="alphabet">
+        <label for="alphabet">Alphabet</label><br>
+        <input type="checkbox" id="number" value="number">
+        <label for="number">Numbers</label><br>
+        <input type="checkbox" id="alphanum" value="alphanum">
+        <label for="alphanum">Mix of alphabet and numbers</label><br>
+    </form>
+    <button id="switch" onclick="finderBackToMainMenu()">MAIN MENU</button>
+</div>
+</section>
 </body>
 </html>

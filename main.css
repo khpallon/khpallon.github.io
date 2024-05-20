@@ -48,6 +48,12 @@ body{
     background-color: #01F9C6;
 
 }
+#switch{
+    float: right;
+}
+#letterMinigame{
+    display: none;
+}
 
 #restart:hover{
     background-color: #18a78a;
@@ -63,3 +69,81 @@ body{
     width: 25%;
   }
   
+
+/* FINDER MINIGAME */
+
+#minigame{
+    display: inline-block;
+    width: 510px;
+    font-weight: 600;
+}
+
+.chars{
+    float: left;
+    padding: 10px;
+    font-family: Cherry;
+    font-size: 20px;
+}
+
+.green{
+    color: white;
+}
+.red{
+    color: red;
+}
+.correct{
+    color: green;
+}
+.bloo{
+    color: blue;
+}
+
+#findthis{
+    font-family: Cherry;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid white;
+    display: none;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: white;
+    margin-bottom: 15px;
+
+}
+
+#whole-Finder{
+    /*     background-image: linear-gradient(to right, #01F9C6 , rgb(236, 238, 238));    
+     */    
+        background-color: #01F9C6;
+        border-radius: 16px;
+        box-shadow: 10px 10px 5px rgb(158, 154, 154);
+        max-width: 640px;
+        margin: 40px auto;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        animation: fadeIn 0.5s ease-out;
+        text-align: center;
+    
+    }
+
+    @font-face {
+        font-family: 'Cherry'; /*a name to be used later*/
+        src: url('./Cherry\ Monospace-Light.ttf'); /*URL to font*/
+    }
+#finderMinigame{
+    display: none;
+}
+.restart-finder{
+    display:block;
+    font-family: Neuropol;
+    font-size: larger;
+    border-radius:5px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px;
+    background-color: #01F9C6;
+}
+.restart-finder:hover{
+    background-color: #18a78a;
+    cursor: pointer;
+}
