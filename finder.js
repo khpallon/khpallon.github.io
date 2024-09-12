@@ -11,7 +11,8 @@ let choice = [];
 let finderAlphabet = "abcdefghijklmnopqrstuvwxyz"
 let alphanum = "abcdefghijklmnopqrstuvwxyz0123456789"
 let number = "0123456789"
-
+let braille = "⠁⠃⠉⠙⠑⠋⠛⠓⠊⠚⠅⠇⠍⠝⠕⠏⠟⠗⠎⠞⠥⠧⠭⠽⠵"
+let charFont = "chars"
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let slider = document.getElementById('finder-slider');
@@ -33,6 +34,13 @@ function main(){
     if (document.getElementById("alphanum").checked === true){
         choice.push(alphanum)
     }
+    if (document.getElementById("braille").checked === true){
+        choice.push(braille)
+    }
+    if (choice.length === 0){
+        document.getElementById("error").style.display = "block"
+        return
+    }
     randomize(choice);
     window.addEventListener("keydown", movement)
     play = setInterval(update, 1500);
@@ -49,9 +57,15 @@ function main(){
 }
 
 function randomize(choice){
+    
+    document.getElementById("error").style.display = "none"
     let symbol = Math.floor(Math.random() * choice.length);
     var characters = choice[symbol]
-    console.log(choice)
+    if (characters === braille){
+        charFont = "bchars"
+    } else {
+        charFont = "chars"
+    }
 
     for (let i = 0; i < 99 ; i++){
         let first = Math.floor(Math.random() * characters.length);
@@ -62,9 +76,9 @@ function randomize(choice){
         numberList.push(combo); 
 
         if (i > (playerLocation[0]-1) && i < (playerLocation[3]+1)){
-            var template = htmlToElement(`<div class="chars green ${i}">${combo.toUpperCase()}</div>`)
+            var template = htmlToElement(`<div class="${charFont} green ${i}">${combo.toUpperCase()}</div>`)
         } else {
-            var template = htmlToElement(`<div class="chars ${i}">${combo.toUpperCase()}</div>`)
+            var template = htmlToElement(`<div class="${charFont} ${i}">${combo.toUpperCase()}</div>`)
         }
 
         
@@ -88,8 +102,8 @@ function randomize(choice){
 
 function finderFailGame(){
     for (let i = 0; i < playerLocation.length; i++){
-        let element = document.getElementsByClassName("chars")[playerLocation[i]];
-        let correctA = document.getElementsByClassName("chars")[correct[i]];
+        let element = document.getElementsByClassName(charFont)[playerLocation[i]];
+        let correctA = document.getElementsByClassName(charFont)[correct[i]];
         correctA.classList.add('correct')
         element.classList.remove('green')
         element.classList.add('red')
@@ -126,7 +140,7 @@ function movement(){
         if (event.keyCode === 13){
             event.preventDefault();
             for (let i = 0; i < playerLocation.length; i++){
-            let element = document.getElementsByClassName("chars")[playerLocation[i]].innerHTML;
+            let element = document.getElementsByClassName(charFont)[playerLocation[i]].innerHTML;
                 submit += element
             }
             if (answer === submit){
@@ -135,7 +149,7 @@ function movement(){
                 clearTimeout(finderTimeout)
                 window.removeEventListener('keydown', movement)
                 for (let i = 0; i < playerLocation.length; i++){
-                    let element = document.getElementsByClassName("chars")[playerLocation[i]];
+                    let element = document.getElementsByClassName(charFont)[playerLocation[i]];
                     element.classList.add("correct") 
                 }
 
@@ -149,7 +163,7 @@ function movement(){
         if (event.keyCode === 38) {
             event.preventDefault();
           for (let i = 0; i < playerLocation.length; i++){
-            let element = document.getElementsByClassName("chars")[playerLocation[i]];
+            let element = document.getElementsByClassName(charFont)[playerLocation[i]];
             element.classList.remove('green')
 
             if (playerLocation[i] >= 0 && playerLocation[i] < 11) {
@@ -157,7 +171,7 @@ function movement(){
             } else {
                 playerLocation[i] = playerLocation[i] - 11;
             }
-            document.getElementsByClassName("chars")[playerLocation[i]].classList.add('green');
+            document.getElementsByClassName(charFont)[playerLocation[i]].classList.add('green');
 
             
 
@@ -169,14 +183,14 @@ function movement(){
 
             event.preventDefault();
             for (let i = 0; i < playerLocation.length; i++){
-            let element = document.getElementsByClassName("chars")[playerLocation[i]];
+            let element = document.getElementsByClassName(charFont)[playerLocation[i]];
             element.classList.remove('green')
             if (playerLocation[i] > 87 && playerLocation[i] <= 98) {
                 playerLocation[i] = playerLocation[i] - 88;
             } else {
                 playerLocation[i] = playerLocation[i] + 11;
             }
-            document.getElementsByClassName("chars")[playerLocation[i]].classList.add('green');
+            document.getElementsByClassName(charFont)[playerLocation[i]].classList.add('green');
 
 
           }
@@ -185,17 +199,17 @@ function movement(){
         if (event.keyCode === 37) {
             event.preventDefault();
             for (let i = 0; i < playerLocation.length; i++){
-            document.getElementsByClassName("chars")[playerLocation[i]].classList.remove('green');
+            document.getElementsByClassName(charFont)[playerLocation[i]].classList.remove('green');
 
             if (playerLocation[i] === 0) {
                 playerLocation[i] = 98;
-                document.getElementsByClassName("chars")[98].classList.add('green');
+                document.getElementsByClassName(charFont)[98].classList.add('green');
                 continue
 
             } else {
                 playerLocation[i] = playerLocation[i] - 1;
             }
-            document.getElementsByClassName("chars")[playerLocation[i]].classList.add('green');
+            document.getElementsByClassName(charFont)[playerLocation[i]].classList.add('green');
 
 
           }
@@ -208,11 +222,11 @@ function movement(){
             for (let i = 0; i < playerLocation.length; i++){
 
                 if (i === 0){
-                    document.getElementsByClassName("chars")[playerLocation[i]].classList.remove('green');
+                    document.getElementsByClassName(charFont)[playerLocation[i]].classList.remove('green');
 
                     if (playerLocation[i] === 98) {
                         playerLocation[i] = 0;
-                        document.getElementsByClassName("chars")[0].classList.add('green');
+                        document.getElementsByClassName(charFont)[0].classList.add('green');
                         continue
         
                     } else {
@@ -223,14 +237,14 @@ function movement(){
                 }
             if (playerLocation[i] === 98) {
                 playerLocation[i] = 0;
-                document.getElementsByClassName("chars")[0].classList.add('green');
+                document.getElementsByClassName(charFont)[0].classList.add('green');
                 continue
 
             } else {
                 playerLocation[i] = playerLocation[i] + 1;
             }
 
-            document.getElementsByClassName("chars")[playerLocation[i]].classList.add('green');
+            document.getElementsByClassName(charFont)[playerLocation[i]].classList.add('green');
             
 
 
@@ -247,9 +261,9 @@ function update(){
 
     for (let i = 0; i < numberList.length ; i++){
         if (playerLocation.includes(i)){
-            var template = htmlToElement(`<div class="chars green ${i}">${numberList[i].toUpperCase()}</div>`)
+            var template = htmlToElement(`<div class="${charFont} green ${i}">${numberList[i].toUpperCase()}</div>`)
         } else {
-            var template = htmlToElement(`<div class="chars ${i}">${numberList[i].toUpperCase()}</div>`)
+            var template = htmlToElement(`<div class="${charFont} ${i}">${numberList[i].toUpperCase()}</div>`)
         }
         document.getElementById("minigame").appendChild(template);
     }
@@ -277,6 +291,7 @@ function finderhider(){
 
 function finderBackToMainMenu(){
     finderStopper();
+    document.getElementById('error').style.display = "none"
     document.getElementById('mainmenu').style.display = "block"
     document.getElementById('finderMinigame').style.display = "none"
 }

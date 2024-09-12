@@ -50,7 +50,20 @@ body{
 }
 #switch{
     float: right;
+    display:block;
+    font-family: Neuropol;
+    font-size: larger;
+    border-radius:5px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px;
+    background-color: #01F9C6;
 }
+
+#switch:hover{
+    background-color: #18a78a;
+    cursor: pointer;
+}
+
 #letterMinigame{
     display: none;
 }
@@ -85,6 +98,13 @@ body{
     font-size: 20px;
 }
 
+.bchars{
+    float: left;
+    padding: 10px;
+    font-family: Cherry;
+    font-size: 17px;
+}
+
 .green{
     color: white;
 }
@@ -92,7 +112,7 @@ body{
     color: red;
 }
 .correct{
-    color: green;
+    color: rgb(0, 64, 255);
 }
 .bloo{
     color: blue;
@@ -146,4 +166,13 @@ body{
 .restart-finder:hover{
     background-color: #18a78a;
     cursor: pointer;
+}
+#error{
+    color: red;
+    font-family: Neuropol;
+    display: none;
+}
+
+#braille{
+    font-size: 100px;
 }
