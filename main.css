@@ -75,7 +75,7 @@ body{
 
 @font-face {
     font-family: 'Neuropol'; /*a name to be used later*/
-    src: url('./neuropol\ x\ rg.otf'); /*URL to font*/
+    src: url('./fondid/neuropol\ x\ rg.otf'); /*URL to font*/
 }
   
   .slider {
@@ -149,11 +149,31 @@ body{
 
     @font-face {
         font-family: 'Cherry'; /*a name to be used later*/
-        src: url('./Cherry\ Monospace-Light.ttf'); /*URL to font*/
+        src: url('./fondid/Cherry\ Monospace-Light.ttf'); /*URL to font*/
     }
 #finderMinigame{
     display: none;
 }
+
+#bankerMinigame{
+    display: none;
+}
+
+#bankWhole{
+    background-image: linear-gradient(to right, #01F9C6 , rgb(236, 238, 238));    border-radius: 16px;
+    box-shadow: 10px 10px 5px rgb(158, 154, 154);
+    max-width: 640px;
+    margin: 40px auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+    text-align: center;
+}
+#bankGame{
+    background-color: gray;
+}
+
 .restart-finder{
     display:block;
     font-family: Neuropol;

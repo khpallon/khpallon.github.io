@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="main.js"></script> 
     <script src="finder.js"></script> 
+    <script src="bank.js"></script> 
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/x-icon" href="/Letter.png">
     <title>LETTER-MINIGAME</title>
 </head>
 <body>
+
     <section id="mainmenu">
         <div id="whole" class="whole">
         <p>MINIGAMES</p>
         <button id="letter-minigame" onclick="hide()">LETTER-MINIGAME</button>
         <button id="finder-minigame" onclick="finderhider()">FINDER-MINIGAME</button>
+        <button id="finder-minigame" onclick="bankerhider()">BANK-MINIGAME</button>
         </div>
     </section>
+
+
+
+
+
     <section id="letterMinigame">
     <div id="whole" class="whole">
     <p>LETTER-MINIGAME</p>
@@ -40,6 +48,12 @@
     <button id="switch" onclick="backToMainMenu()">MAIN MENU</button>
 </div>
 </section>
+
+
+
+
+
+
 <section id="finderMinigame">
     <div id="whole-Finder" class="whole">
     <p>FINDER-MINIGAME</p>
@@ -65,6 +79,27 @@
     <p id="error">You have to choose a symbol type!</p>
     <button id="switch" onclick="finderBackToMainMenu()">MAIN MENU</button>
 </div>
+</section>
+
+
+
+
+<section id="bankerMinigame">
+    <div id="bankWhole">
+        <div id="bankGame">
+            <svg height="200" width="640" xmlns="http://www.w3.org/2000/svg">
+                <rect width="150" height="150" x="5" y="25" style="fill:black" />
+                <rect width="150" height="150" x="165" y="25" style="fill:black" />
+                <rect width="150" height="150" x="324" y="25" style="fill:black" />
+                <rect width="150" height="150" x="485" y="25" style="fill:black" />
+
+            </svg>
+        </div>
+    </div>
+    <div id="radial">
+    <button id="restart" onclick="bankStart()">START/RESTART</button>
+    <button id="switch" onclick="bankerBackToMainMenu()">MAIN MENU</button>
+    </div>
 </section>
 </body>
 </html>
